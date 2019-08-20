@@ -1,8 +1,9 @@
 <services>
   <service name="tar_scm">
     <param name="scm">git</param>
-    <param name="url">https://opendev.org/starlingx/metal.git</param>
+    <param name="url">https://github.com/marcelarosalesj/metal.git</param>
     <param name="version">1.0</param>
+    <param name="revision">opensuse</param>
     <param name="subdir">mtce-common/src</param>
     <param name="filename">mtce-common</param>
     <param name="changesgenerate">disable</param>
