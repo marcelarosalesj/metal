@@ -1,16 +1,13 @@
 [Unit]
-Description=Starling-X Maintenance Link Monitor
+Description=StarlingX Maintenance Link Monitor
 
 After=config.service
 After=syslog-ng.service
 Before=pmon.service
 
 [Service]
-Type=forking
-ExecStart=/etc/rc.d/init.d/lmon start
-ExecStop=/etc/rc.d/init.d/lmon stop
-ExecReload=/etc/rc.d/init.d/lmon reload
-PIDFile=/var/run/lmond.pid
+Type=simple
+ExecStart=/usr/local/bin/lmond
 KillMode=process
 
 [Install]
