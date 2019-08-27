@@ -1,14 +1,11 @@
 [Unit]
-Description=Titanium Cloud Maintenance Filesystem Monitor
+Description=StarlingX Maintenance Filesystem Monitor
 After=network.target syslog.service config.service
 Before=pmon.service
 
 [Service]
-Type=forking
-ExecStart=/etc/rc.d/init.d/fsmon start
-ExecStop=/etc/rc.d/init.d/fsmon stop
-ExecReload=/etc/rc.d/init.d/fsmon reload
-PIDFile=/var/run/fsmond.pid
+Type=simple
+ExecStart=/usr/local/bin/fsmond
 
 # Failure handling
 TimeoutStartSec=10s
@@ -20,4 +17,3 @@ RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
-
