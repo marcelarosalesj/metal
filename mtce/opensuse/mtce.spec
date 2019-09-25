@@ -149,7 +149,7 @@ netlink monitoring for provisioned oam, mgmt and cluster-host interfaces.
 %define ocf_resourced %{_libdir}/ocf/resource.d
 
 %prep
-%setup -n ${name}-%{version}/src
+%setup -n %{name}-%{version}/src
 
 # Build mtce package
 %build
