@@ -21,7 +21,7 @@ BuildArch:      noarch
 Platform kickstart files
 
 %prep
-%autosetup -n %{name}-%{version}/bsp-files
+%autosetup -n metal-%{version}/bsp-files
 
 %build
 ./centos-ks-gen.pl --release %{platform_release}
