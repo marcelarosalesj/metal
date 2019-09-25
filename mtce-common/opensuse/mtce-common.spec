@@ -86,7 +86,7 @@ and related items necessary for software development.
 %define debug_package %{nil}
 
 %prep
-%autosetup
+%autosetup -n %{name}-%{version}/%{name}
 
 %build
 VER=%{version}
