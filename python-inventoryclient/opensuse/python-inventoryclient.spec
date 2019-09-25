@@ -39,7 +39,7 @@ Summary:        SDK files for %{name}
 This package contains SDK files for %{name} package.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}-%{version}/inventoryclient
 
 # Remove bundled egg-info
 rm -rf *.egg-info
