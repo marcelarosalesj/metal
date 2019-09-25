@@ -99,7 +99,7 @@ The inventory service for StarlingX
 
 %prep
 %setup -n %{name}-%{version}/inventory
-%patch -p3
+%patch0 -p3
 
 # Remove bundled egg-info
 rm -rf *.egg-info
