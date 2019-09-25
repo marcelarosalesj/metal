@@ -19,7 +19,7 @@ Requires: qemu-kvm
 Maintenance support files for compute-only node type
 
 %prep
-%autosetup
+%autosetup -n %{name}-%{version}/src
 
 %build
 
