@@ -19,7 +19,7 @@ BuildArch: noarch
 Maintenance support files for storage-only node type.
 
 %prep
-%autosetup
+%autosetup -n %{name}-%{version}/src
 
 %build
 
