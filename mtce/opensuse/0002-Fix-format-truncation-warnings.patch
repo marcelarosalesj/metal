@@ -1,0 +1,56 @@
+From 74ad2e071de0b162148b846418fd32aea9c8388a Mon Sep 17 00:00:00 2001
+From: Erich Cordoba <erich.cordoba.malibran@intel.com>
+Date: Tue, 25 Jun 2019 16:00:40 -0500
+Subject: [PATCH 2/4] Fix format-truncation warnings
+
+Signed-off-by: Erich Cordoba <erich.cordoba.malibran@intel.com>
+---
+ mtce/src/heartbeat/hbsUtil.cpp | 2 +-
+ mtce/src/hwmon/hwmonAlarm.cpp  | 2 +-
+ mtce/src/pmon/pmonHdlr.cpp     | 4 ++++
+ 3 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/mtce/src/heartbeat/hbsUtil.cpp b/mtce/src/heartbeat/hbsUtil.cpp
+index c4fbe4c..ae2a81d 100644
+--- a/mtce/src/heartbeat/hbsUtil.cpp
++++ b/mtce/src/heartbeat/hbsUtil.cpp
+@@ -163,7 +163,7 @@ void hbs_cluster_log ( string & hostname,
+         if ( cluster.history[h].entries == MTCE_HBS_HISTORY_ENTRIES )
+         {
+ #define MAX_CLUSTER_LINE_LEN 100
+-#define MAX_ENTRY_STR_LEN     10 /* "9999:9999 " */
++#define MAX_ENTRY_STR_LEN     13 /* "9999:9999 " */
+             mtce_hbs_cluster_entry_type e = { 0, 0 } ;
+             char str[MAX_CLUSTER_LINE_LEN] ;
+             string line  = "";
+diff --git a/mtce/src/hwmon/hwmonAlarm.cpp b/mtce/src/hwmon/hwmonAlarm.cpp
+index 920b59b..35af8cb 100644
+--- a/mtce/src/hwmon/hwmonAlarm.cpp
++++ b/mtce/src/hwmon/hwmonAlarm.cpp
+@@ -260,7 +260,7 @@ int hwmon_alarm_util ( string           & hostname,
+             if ( state == FM_ALARM_STATE_CLEAR )
+             {
+                 snprintf(alarm.reason_text, FM_MAX_BUFFER_LENGTH,
+-                             "%s:%s alarm clear\n",
++                              "%.119s:%.119s alarm clear\n", // Split in half the usage of the buffer
+                               alarm.alarm_id,
+                               alarm.entity_instance_id);
+                 hostname_prefix_in_reason = false ;
+diff --git a/mtce/src/pmon/pmonHdlr.cpp b/mtce/src/pmon/pmonHdlr.cpp
+index 2024bb4..b805fa5 100644
+--- a/mtce/src/pmon/pmonHdlr.cpp
++++ b/mtce/src/pmon/pmonHdlr.cpp
+@@ -538,6 +538,10 @@ bool service_file_exists ( string service_filename,
+                            char * path_n_name_ptr,
+                            int    max_len )
+ {
++    if ( path_n_name_ptr == NULL ) {
++        return false;
++    }
++
+     /* load the name of the service file */
+     snprintf ( path_n_name_ptr, max_len, "%s/%s",
+                                           SYSTEMD_SERVICE_FILE_DIR1,
+-- 
+2.17.1
+
