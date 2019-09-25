@@ -25,7 +25,7 @@ Maintenance support files for controller-only node type
 %build
 
 %install
-make install buildroot=%{buildroot}/%{name}-%{version}/src _sysconfdir=%{_sysconfdir} _unitdir=%{_unitdir} _datarootdir=%{_datarootdir}
+make install buildroot=%{buildroot} _sysconfdir=%{_sysconfdir} _unitdir=%{_unitdir} _datarootdir=%{_datarootdir}
 
 %pre
 %service_add_pre hbsAgent.service hbsAgent.target
