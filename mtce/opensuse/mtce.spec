@@ -149,7 +149,7 @@ netlink monitoring for provisioned oam, mgmt and cluster-host interfaces.
 %define ocf_resourced %{_libdir}/ocf/resource.d
 
 %prep
-%setup
+%setup -n ${name}-%{version}/src
 
 # Build mtce package
 %build
@@ -158,7 +158,7 @@ MAJOR=$(echo $VER | awk -F . '{print $1}')
 MINOR=$(echo $VER | awk -F . '{print $2}')
 make MAJOR=$MAJOR MINOR=$MINOR %{?_smp_mflags} build
 
-%global _buildsubdir %{_builddir}/%{name}-%{version}
+%global _buildsubdir %{_builddir}/%{name}-%{version}/src
 
 # Install mtce package
 %install
