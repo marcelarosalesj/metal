@@ -98,7 +98,7 @@ The inventory service for StarlingX
 %define debug_package %{nil}
 
 %prep
-%setup -n
+%setup -n %{name}-%{version}/inventory
 %patch -p3
 
 # Remove bundled egg-info
