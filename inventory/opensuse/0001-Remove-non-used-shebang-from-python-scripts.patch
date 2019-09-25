@@ -1,0 +1,74 @@
+From 39a4982c45ef0cdb31788793526a005fdd9f5aa5 Mon Sep 17 00:00:00 2001
+From: Erich Cordoba <erich.cordoba.malibran@intel.com>
+Date: Thu, 27 Jun 2019 18:12:03 -0500
+Subject: [PATCH] Remove non used shebang from python scripts
+
+These shebangs are not needed in these scripts
+
+Signed-off-by: Erich Cordoba <erich.cordoba.malibran@intel.com>
+---
+ inventory/inventory/inventory/api/controllers/v1/collection.py | 1 -
+ inventory/inventory/inventory/api/controllers/v1/state.py      | 1 -
+ inventory/inventory/inventory/cmd/agent.py                     | 1 -
+ inventory/inventory/inventory/cmd/conductor.py                 | 1 -
+ inventory/inventory/inventory/cmd/dnsmasq_lease_update.py      | 1 -
+ inventory/inventory/inventory/common/service.py                | 1 -
+ 6 files changed, 6 deletions(-)
+
+diff --git a/inventory/inventory/inventory/api/controllers/v1/collection.py b/inventory/inventory/inventory/api/controllers/v1/collection.py
+index 4c18fda..6374535 100644
+--- a/inventory/inventory/inventory/api/controllers/v1/collection.py
++++ b/inventory/inventory/inventory/api/controllers/v1/collection.py
+@@ -1,4 +1,3 @@
+-#!/usr/bin/env python
+ # vim: tabstop=4 shiftwidth=4 softtabstop=4
+ 
+ # Copyright 2013 Red Hat, Inc.
+diff --git a/inventory/inventory/inventory/api/controllers/v1/state.py b/inventory/inventory/inventory/api/controllers/v1/state.py
+index 917b533..b4df06d 100644
+--- a/inventory/inventory/inventory/api/controllers/v1/state.py
++++ b/inventory/inventory/inventory/api/controllers/v1/state.py
+@@ -1,4 +1,3 @@
+-#!/usr/bin/env python
+ # vim: tabstop=4 shiftwidth=4 softtabstop=4
+ 
+ # Copyright 2013 Red Hat, Inc.
+diff --git a/inventory/inventory/inventory/cmd/agent.py b/inventory/inventory/inventory/cmd/agent.py
+index 8d2e6d0..c2c544a 100644
+--- a/inventory/inventory/inventory/cmd/agent.py
++++ b/inventory/inventory/inventory/cmd/agent.py
+@@ -1,4 +1,3 @@
+-#!/usr/bin/env python
+ # -*- encoding: utf-8 -*-
+ #
+ # vim: tabstop=4 shiftwidth=4 softtabstop=4
+diff --git a/inventory/inventory/inventory/cmd/conductor.py b/inventory/inventory/inventory/cmd/conductor.py
+index be3e14e..69b0566 100644
+--- a/inventory/inventory/inventory/cmd/conductor.py
++++ b/inventory/inventory/inventory/cmd/conductor.py
+@@ -1,4 +1,3 @@
+-#!/usr/bin/env python
+ # -*- encoding: utf-8 -*-
+ #
+ # vim: tabstop=4 shiftwidth=4 softtabstop=4
+diff --git a/inventory/inventory/inventory/cmd/dnsmasq_lease_update.py b/inventory/inventory/inventory/cmd/dnsmasq_lease_update.py
+index 645e8bd..bad1f60 100755
+--- a/inventory/inventory/inventory/cmd/dnsmasq_lease_update.py
++++ b/inventory/inventory/inventory/cmd/dnsmasq_lease_update.py
+@@ -1,4 +1,3 @@
+-#!/usr/bin/env python
+ # -*- encoding: utf-8 -*-
+ #
+ # vim: tabstop=4 shiftwidth=4 softtabstop=4
+diff --git a/inventory/inventory/inventory/common/service.py b/inventory/inventory/inventory/common/service.py
+index 8c54a49..d484e06 100644
+--- a/inventory/inventory/inventory/common/service.py
++++ b/inventory/inventory/inventory/common/service.py
+@@ -1,4 +1,3 @@
+-#!/usr/bin/env python
+ # -*- encoding: utf-8 -*-
+ #
+ # Copyright © 2012 eNovance <licensing@enovance.com>
+-- 
+2.17.1
+
