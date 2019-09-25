@@ -152,7 +152,7 @@ netlink monitoring for provisioned oam, mgmt and cluster-host interfaces.
 
 %prep
 %setup -n %{name}-%{version}/src
-
+%patch1 -p3
 # Build mtce package
 %build
 VER=%{version}
