@@ -8,7 +8,7 @@ Release:        0
 License:        Apache-2.0
 Group:          Development/Tools/Other
 URL:            https://opendev.org/starlingx/metal
-Source0:        bsp-files-%{version}.tar.gz
+Source0:        metal-%{version}.tar.gz
 Source1:        LICENSE
 
 BuildRequires:  perl
@@ -21,7 +21,7 @@ BuildArch:      noarch
 Platform kickstart files
 
 %prep
-%autosetup -n bsp-files-%{version}
+%autosetup -n %{name}-%{version}/bsp-files
 
 %build
 ./centos-ks-gen.pl --release %{platform_release}
