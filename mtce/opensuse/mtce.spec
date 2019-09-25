@@ -7,6 +7,8 @@ Group: System/Base
 URL: https://www.starlingx.io
 
 Source0: %{name}-%{version}.tar.gz
+# Patches not applied in upstream yet.
+Patch1: 0002-Fix-format-truncation-warnings.patch
 
 BuildRequires: gcc-c++
 BuildRequires: libssh2-1
