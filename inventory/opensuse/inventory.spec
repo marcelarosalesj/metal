@@ -6,7 +6,6 @@ License: Apache-2.0
 Group: System/Base
 URL: https://www.starlingx.io
 Source0: %{name}-%{version}.tar.gz
-Patch0: 0001-Remove-non-used-shebang-from-python-scripts.patch
 
 BuildRequires:  cgts-client
 BuildRequires:  python-setuptools
@@ -99,7 +98,6 @@ The inventory service for StarlingX
 
 %prep
 %setup -n %{name}-%{version}/inventory
-%patch0 -p3
 
 # Remove bundled egg-info
 rm -rf *.egg-info
