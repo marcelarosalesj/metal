@@ -1,6 +1,6 @@
 Summary:        StarlingX Platform Storage Node Maintenance
 Name:           mtce-storage
-Version:        1.0
+Version:        1.0.0
 Release:        0
 License:        Apache-2.0
 Group:          Development/Tools/Other

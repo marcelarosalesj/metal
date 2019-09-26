@@ -1,5 +1,5 @@
 Name:           mtce-common
-Version:        1.0
+Version:        1.0.0
 Release:        1
 Summary:        Maintenance Common Base Package
 License:        Apache-2.0

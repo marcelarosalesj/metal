@@ -1,6 +1,6 @@
 %global pypi_name inventoryclient
 Name:           python-inventoryclient
-Version:        1.0
+Version:        1.0.0
 Release:        1
 Summary:        A python client library for Inventory
 License:        Apache-2.0
