@@ -25,7 +25,7 @@ BuildRequires: postgresql
 BuildRequires: libuuid-devel
 BuildRequires: systemd-devel
 BuildRequires: cppcheck
-BuildRequires: mtce-common-devel >= 1.0
+BuildRequires: mtce-common-devel >= 1.0.0
 
 Requires: util-linux
 Requires: systemd
