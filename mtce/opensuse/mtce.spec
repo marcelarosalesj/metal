@@ -1,6 +1,6 @@
 Summary: StarlingX Common Maintenance Package
 Name: mtce
-Version: 1.0
+Version: 1.0.0
 Release: 2
 License: Apache-2.0
 Group: System/Base
@@ -149,7 +149,7 @@ netlink monitoring for provisioned oam, mgmt and cluster-host interfaces.
 %define ocf_resourced %{_libdir}/ocf/resource.d
 
 %prep
-%setup
+%setup -n %{name}-%{version}/src
 
 # Build mtce package
 %build
